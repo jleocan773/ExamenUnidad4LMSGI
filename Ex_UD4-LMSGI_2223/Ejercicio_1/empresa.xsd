@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="pedidos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sucursal" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="direccion" />
+                            <xs:element name="nombre_trabajador" />
+                            <xs:element name="fecha_pedido" />
+                            <xs:element name="observaciones_pedido">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Urgente"/>
+                                        <xs:enumeration value="Incompleto"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element> 
+                            <xs:element name="articulos" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="unidades_pedidas" />
+                                        <xs:element name="precio_unidad" />
+                                        <xs:element name="observaciones_articulo" minOccurs="0" />
+                                        <xs:element name="plazo_revision" />
+                                    </xs:sequence>
+                                    <xs:attribute name="codigo_articulo" use="required">
+                                        <xs:simpleType>
+			                                <xs:restriction base="xs:string">
+				                            <xs:pattern value="[A-Z]{3}-[0-9]{3}"/>
+			                                </xs:restriction>
+		                                </xs:simpleType>
+                                    </xs:attribute> 
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="codigo_sucursal" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                <xs:pattern value="[A-Z]([0-9]{7})"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

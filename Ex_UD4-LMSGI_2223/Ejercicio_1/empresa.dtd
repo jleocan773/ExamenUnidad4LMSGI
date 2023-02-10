@@ -1,0 +1,13 @@
+<!ELEMENT pedidos (sucursal*)>
+<!ELEMENT sucursal (direccion, nombre_trabajador, fecha_pedido, observaciones_pedido, articulos+)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT nombre_trabajador (#PCDATA)>
+<!ELEMENT fecha_pedido (#PCDATA)>
+<!ELEMENT observaciones_pedido (#PCDATA)>
+<!ATTLIST sucursal codigo_sucursal ID #REQUIRED>
+<!ELEMENT articulos (unidades_pedidas, precio_unidad, observaciones_articulo, plazo_revision)>
+<!ELEMENT unidades_pedidas (#PCDATA)>
+<!ELEMENT precio_unidad (#PCDATA)>
+<!ELEMENT observaciones_articulo (#PCDATA)>
+<!ELEMENT plazo_revision (#PCDATA)>
+<!ATTLIST articulos codigo_articulo ID #REQUIRED>

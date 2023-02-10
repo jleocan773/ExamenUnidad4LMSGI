@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pedidos SYSTEM "empresa.dtd">
+<pedidos>
+<sucursal codigo_sucursal="A1234567">
+	<direccion>Calle Falsa nº 123</direccion>
+	<nombre_trabajador>Fulano Mengano Pérez</nombre_trabajador>
+	<fecha_pedido>2023/02/10</fecha_pedido>
+	<observaciones_pedido>Urgente</observaciones_pedido>
+	<articulos codigo_articulo="ART-001">
+		<unidades_pedidas>2</unidades_pedidas>
+		<precio_unidad>150€</precio_unidad>
+		<observaciones_articulo>Hay que fabricar más, estos dos son los últimos</observaciones_articulo>
+		<plazo_revision>5 días</plazo_revision>
+	</articulos>
+</sucursal>
+</pedidos>

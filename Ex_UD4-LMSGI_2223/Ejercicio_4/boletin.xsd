@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="boletin">
+            <xs:complexType>
+                  <xs:sequence>
+                        <xs:element name="nombre" type="xs:string" />
+                        <xs:element name="ciclo" type="xs:string" />
+                        <xs:element name="curso" type="xs:string" />
+                        <xs:element name="evaluacion" type="xs:string" />
+                        <xs:element name="cualificacion" maxOccurs="unbounded">
+                              <xs:complexType>
+                                    <xs:sequence>
+                                          <xs:element name="modulo" type="xs:string" />
+                                          <xs:element name="curso" type="xs:string" />
+                                          <xs:element name="nota">
+                                                <xs:simpleType>
+                                                      <xs:restriction base="xs:integer">
+                                                            <xs:enumeration value="1" />
+                                                            <xs:enumeration value="2" />
+                                                            <xs:enumeration value="3" />
+                                                            <xs:enumeration value="4" />
+                                                            <xs:enumeration value="5" />
+                                                            <xs:enumeration value="6" />
+                                                            <xs:enumeration value="7" />
+                                                            <xs:enumeration value="8" />
+                                                            <xs:enumeration value="9" />
+                                                            <xs:enumeration value="10" />
+                                                      </xs:restriction>
+                                                </xs:simpleType>
+                                          </xs:element>
+                                    </xs:sequence>
+                              </xs:complexType>
+                        </xs:element>
+                  </xs:sequence>
+            </xs:complexType>
+      </xs:element>
+</xs:schema>
